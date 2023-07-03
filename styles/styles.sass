@@ -1,0 +1,612 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
+
+@mixin flex($justify)
+  display: flex
+  justify-content: $justify
+  align-items: center
+
+@mixin grid($columns)
+  display: grid
+  grid-template-columns: $columns
+  grid-gap: 20px
+
+@mixin image()
+  height: 100%
+  width: 100%
+  object-fit: cover
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  font-family: 'Poppins', sans-serif
+  border: none
+  background: none
+  list-style: none
+
+$pri: #3BC35A
+$dark: #000000
+$light: #ffffff
+$bg: #E9FCED
+
+section
+  background-color: $light
+  padding: 4rem 0
+
+  &.bg-image-section
+    background-position: center
+    background-size: cover
+    background-repeat: no-repeat
+
+.wrapper
+  max-width: 1300px
+  margin: 0 auto
+  padding: 0 1rem
+
+.section-title
+  text-align: center
+  margin-bottom: 2rem
+
+  &.with-btn
+    @include flex($justify: space-between)
+
+    .title-area
+      text-align: left
+
+    .pageBtn
+      padding: .6rem 1.2rem
+      border: .1rem solid $pri
+      color: $pri
+      text-transform: uppercase
+      font-weight: 500
+      font-size: .8rem
+      border-radius: .2rem
+      cursor: pointer
+
+  h2
+    font-size: 1.5rem
+    font-weight: 500
+    margin-bottom: .6rem
+
+  p
+    font-size: .8rem
+    color: lighten($dark, 40%)
+
+/////////     banner-section     /////////
+header
+  position: sticky
+  top: 0
+  left: 0
+  width: 100%
+  z-index: 100
+  background-color: $light
+  border-bottom: 1px solid lighten(#000, 90%)
+
+  .header-inner
+    @include flex($justify: space-between)
+
+    .logo
+      height: 4.7rem
+      width: 4.7rem
+
+      img
+        @include image()
+
+    nav
+      @include flex($justify: flex-end)
+
+      ul
+        @include flex($justify: flex-end)
+        gap: .5rem
+
+        button
+          padding: 1rem
+          font-size: 1rem
+          font-weight: 300
+          cursor: pointer
+          color: lighten(#000, 20%)
+
+          &:hover
+            color: lighten(#000, 0)
+
+      .register
+        margin-left: 1rem
+
+        button
+          padding: .6rem 1.5rem
+          border: .1rem solid $dark
+          text-transform: uppercase
+          font-weight: 500
+          border-radius: .2rem
+          cursor: pointer
+
+/////////     banner-section     /////////
+.banner-section
+  position: relative
+  height: 100%
+  background-color: $light
+  width: 100%
+
+  .bg-image-area
+    position: absolute
+    left: 0
+    top: 0
+    height: 100%
+    width: 100%
+    z-index: 1
+
+    & div
+      height: 100%
+      width: 100%
+
+    img
+      height: 100%
+      width: 100%
+      object-fit: cover
+
+  .banner-bg
+    width: 100%
+    height: 100%
+    object-fit: cover
+
+  .banner-area
+    position: relative
+    height: 100%
+    @include grid($columns: 1fr 1fr)
+    align-items: center
+    padding: 1.5rem 0 4rem
+    z-index: 2
+
+    .content-sec
+      h2
+        font-size: 3rem
+        font-weight: 600
+        line-height: 3.4rem
+
+      p
+        font-size: 1rem
+        margin: 1rem 0 1.5rem
+        color: lighten(#000, 20%)
+
+      .button-group
+        @include flex($justify: flex-start)
+        gap: 1rem
+
+        button
+          padding: 1rem 1.5rem
+          background-color: $pri
+          color: $light
+          border: none
+          border-radius: .2rem
+          text-transform: uppercase
+          font-weight: 500
+          @include flex($justify: center)
+          font-size: .8rem
+          line-height: .5rem
+          border: 1px solid $pri
+          cursor: pointer
+
+          &:nth-last-child(1)
+            background: none
+            color: $pri
+
+    .image-sec
+      height: 25rem
+
+      .big-image
+        position: relative
+        height: 100%
+        @include flex($justify: flex-end)
+
+        .image-area
+          position: relative
+          height: 100%
+          width: 22rem
+          border-radius: 1rem
+          overflow: hidden
+
+          & > div
+            height: 100%
+            width: 100%
+
+          img
+            @include image()
+
+        .content-area
+          position: absolute
+          right: -2rem
+          top: 40%
+          transform: translateY(-50%)
+          padding: .7rem
+          max-width: 15rem
+          width: 100%
+          background-color: $light
+          border-radius: .5rem
+          border-left: .3rem solid #D6DDE3
+          box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.05)
+
+          h4
+            font-weight: 700
+            margin-bottom: .5rem
+            font-size: 1rem
+
+          .others
+            @include flex($justify: flex-start)
+            list-style: none
+            gap: 1rem
+
+            li
+              font-size: .77rem
+              color: lighten($dark, 40%)
+
+      .small-image
+        position: absolute
+        bottom: -.3rem
+        right: 13rem
+        height: 12rem
+        width: 11rem
+        overflow: hidden
+        border-radius: .4rem
+        padding: .5rem
+        background-color: $light
+
+        .image-area
+          height: 100%
+          width: 100%
+          border-radius: .4rem
+          background-color: $light
+          padding: .4rem
+          overflow: hidden
+
+          img
+            border-radius: .4rem
+            @include image()
+            transform: scale(1.2)
+
+      .rating-area
+        position: absolute
+        right: 18rem
+        top: 97%
+        transform: translateY(-50%)
+        padding: .6rem .7rem
+        background-color: $light
+        border-radius: .5rem
+        border-left: .3rem solid #D6DDE3
+        box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.05)
+
+        p
+          font-size: .8rem
+          margin-bottom: 0
+
+        .rating
+          @include flex($justify: flex-start)
+          gap: .5rem
+          margin-bottom: .3rem
+
+          h3
+            font-weight: 700
+            margin-bottom: 0
+            font-size: 1.5rem
+            line-height: 1rem
+
+          img
+            height: 1.2rem
+            width: 1.2rem
+            object-fit: contain
+
+/////////     features-of-trust     /////////
+.features-of-trust
+  .swiper-button-next, .swiper-button-prev
+    height: 2.5rem
+    width: 2.5rem
+    border-radius: 50%
+    background-color: $light
+    box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.05)
+    left: 98%
+    top: 55%
+    transform: translate(-50%, -50%)
+    @include flex($justify: center)
+
+    &::before
+      content: ">"
+      font-size: 2rem
+      color: $dark
+
+    &::after
+      display: none
+
+  .swiper-button-prev
+    left: 2%
+
+    &::before
+      content: "<"
+
+  .swiper-slide
+    padding: 1rem
+
+  .item
+    text-align: center
+    padding: 3rem 2rem
+    box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.05)
+    @include flex($justify: center)
+    flex-direction: column
+
+    .icon-area
+      height: 6rem
+      width: 6rem
+      border-radius: 50%
+      background-color: #E9FCED
+      margin-bottom: 2.5rem
+      @include flex($justify: center)
+
+      img
+        height: 60%
+        width: 60%
+        object-fit: contain
+
+    .content
+      h3
+        font-weight: 500
+        font-size: 1.3rem
+        margin-bottom: .5rem
+
+      p
+        font-size: .8rem
+        color: lighten($dark, 40%)
+
+/////////     features-of-trust     /////////
+.how-it-works
+  .swiper-button-next, .swiper-button-prev
+    height: 2.5rem
+    width: 2.5rem
+    border-radius: 50%
+    background-color: $light
+    box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.05)
+    top: 96%
+    left: 53%
+    transform: translate(-50%, -50%)
+    @include flex($justify: center)
+
+    &::before
+      content: ">"
+      font-size: 2rem
+      color: $dark
+
+    &::after
+      display: none
+
+  .swiper-button-prev
+    left: 48%
+
+    &::before
+      content: "<"
+
+  .swiper-wrapper
+    padding-bottom: 4rem
+
+  .swiper-slide
+    padding: 1rem .5rem
+
+  .item
+    box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.05)
+    border-radius: .5rem
+    overflow: hidden
+
+    .image-area
+      height: 9rem
+      width: 100%
+
+      img
+        @include image()
+
+    .content
+      width: 100%
+      padding: .6rem
+
+      h3
+        font-size: .95rem
+        font-weight: 500
+        margin-bottom: .4rem
+
+      p
+        font-size: .77rem
+
+/////////     earn-money     /////////
+.earn-money
+  .inner-content
+    @include grid($columns: 1.2fr 1fr)
+    grid-gap: 3rem
+
+    &.own-boss
+      @include grid($columns: 1fr 1.3fr)
+      margin-top: 8rem
+      grid-gap: 4rem
+
+      .content-sec
+        margin-left: 2rem
+
+      .content-area
+        top: 2%
+        left: 50%
+
+        &.total-earnings
+          left: 98%
+          top: 84%
+          max-width: 12rem
+          @include flex($justify: center)
+          flex-direction: column
+          text-align: center
+
+          h3
+            font-size: 1.4rem
+            font-weight: 500
+
+          .icon
+            height: 3.5rem
+            width: 3.5rem
+
+            img
+              @include image()
+              object-fit: contain
+
+        .price-sec
+          @include flex($justify: space-between)
+
+          h4
+            font-size: .9rem
+            color: $pri
+
+    .content-sec
+      margin-top: 3rem
+
+      h2
+        font-size: 3rem
+        font-weight: 500
+        color: lighten(#000, 20%)
+
+      p
+        font-size: 1rem
+        margin: 1rem 0 1.5rem
+        color: lighten(#000, 40%)
+        max-width: 30rem
+        line-height: 2rem
+
+      .button-group
+        @include flex($justify: flex-start)
+        gap: 1rem
+
+        button
+          padding: 1rem 1.5rem
+          background-color: $pri
+          color: $light
+          border: none
+          border-radius: .2rem
+          text-transform: uppercase
+          font-weight: 500
+          @include flex($justify: center)
+          font-size: .8rem
+          line-height: .5rem
+          border: 1px solid $pri
+          cursor: pointer
+
+    .image-sec
+      position: relative
+
+    .image-area
+      height: 40rem
+      width: 100%
+
+      img
+        @include image()
+        border-radius: 1.5rem
+
+    .content-area
+      position: absolute
+      left: 10%
+      top: 70%
+      transform: translate(-50%, -50%)
+      padding: .7rem
+      max-width: 18rem
+      width: 100%
+      background-color: $light
+      border-radius: .5rem
+      border-left: .2rem solid $pri
+      box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.05)
+
+      &.rating
+        max-width: 13rem
+        top: 45%
+        @include flex($justify: center)
+        flex-direction: column
+        text-align: center
+
+        .icon
+          height: 5rem
+          width: 5rem
+
+          img
+            @include image()
+            object-fit: contain
+
+        .rating-icon
+          height: 2rem
+          width: 8rem
+
+          img
+            @include image()
+            object-fit: contain
+
+      h4
+        font-weight: 500
+        margin-bottom: .3rem
+        font-size: 1.1rem
+
+      p
+        font-size: .7rem
+        color: lighten($dark, 40%)
+
+      .others
+        @include flex($justify: flex-start)
+        list-style: none
+        gap: 1rem
+
+        li
+          font-size: .77rem
+          color: lighten($dark, 40%)
+
+/////////     download-app     /////////
+.download-app
+  .inner-content
+    @include grid($columns: 1.2fr 1fr)
+    grid-gap: 3rem
+
+    .content-sec
+      margin-top: 10rem
+
+      h2
+        font-size: 2rem
+        font-weight: 500
+        color: lighten(#000, 20%)
+
+      p
+        font-size: 1rem
+        margin: .8rem 0 1rem
+        color: lighten(#000, 50%)
+        max-width: 30rem
+        line-height: 2rem
+
+      ul
+        margin-bottom: 2rem
+
+        li
+          @include flex($justify: flex-start)
+          gap: .7rem
+          margin-bottom: 1rem
+          color: lighten(#000, 30%)
+
+          i
+            height: 1.3rem
+            width: 1.3rem
+            background-color: lighten($pri, 20%)
+            @include flex($justify: center)
+            border-radius: 50%
+            color: $light
+
+      .button-group
+        @include flex($justify: flex-start)
+        gap: 1rem
+
+        button
+          height: 3.4rem
+          cursor: pointer
+
+          img
+            @include image()
+
+    .image-area
+      height: 40rem
+      width: 100%
+
+      img
+        @include image()
+        border-radius: 1.5rem
