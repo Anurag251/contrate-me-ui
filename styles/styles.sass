@@ -59,12 +59,16 @@ section
       color: $pri
       text-transform: uppercase
       font-weight: 500
-      font-size: .8rem
+      font-size: 1rem
       border-radius: .2rem
       cursor: pointer
 
+      &:hover
+        background-color: $pri
+        color: $light
+
   h2
-    font-size: 1.5rem
+    font-size: 2rem
     font-weight: 500
     margin-bottom: .6rem
 
@@ -119,6 +123,10 @@ header
           font-weight: 500
           border-radius: .2rem
           cursor: pointer
+
+          &:hover
+            background-color: $dark
+            color: $light
 
 /////////     banner-section     /////////
 .banner-section
@@ -190,6 +198,14 @@ header
             background: none
             color: $pri
 
+            &:hover
+              color: darken($pri, 10%)
+              border-color: darken($pri, 10%)
+              background: none
+
+          &:hover
+            background-color: darken($pri, 5%)
+
     .image-sec
       height: 25rem
 
@@ -218,7 +234,7 @@ header
           top: 40%
           transform: translateY(-50%)
           padding: .7rem
-          max-width: 15rem
+          max-width: 15.4rem
           width: 100%
           background-color: $light
           border-radius: .5rem
@@ -226,9 +242,9 @@ header
           box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.05)
 
           h4
-            font-weight: 700
-            margin-bottom: .5rem
-            font-size: 1rem
+            font-size: .95rem
+            font-weight: 500
+            margin-bottom: .4rem
 
           .others
             @include flex($justify: flex-start)
@@ -236,8 +252,11 @@ header
             gap: 1rem
 
             li
-              font-size: .77rem
+              font-size: .7rem
               color: lighten($dark, 40%)
+
+              i
+                margin-right: .2rem
 
       .small-image
         position: absolute
@@ -281,13 +300,12 @@ header
         .rating
           @include flex($justify: flex-start)
           gap: .5rem
-          margin-bottom: .3rem
+          margin-bottom: .2rem
 
           h3
-            font-weight: 700
+            font-weight: 600
             margin-bottom: 0
-            font-size: 1.5rem
-            line-height: 1rem
+            font-size: 1.6rem
 
           img
             height: 1.2rem
@@ -356,6 +374,9 @@ header
 
 /////////     features-of-trust     /////////
 .how-it-works
+  max-width: 1850px
+  margin: 0 auto
+
   .swiper-button-next, .swiper-button-prev
     height: 2.5rem
     width: 2.5rem
@@ -489,6 +510,9 @@ header
           border: 1px solid $pri
           cursor: pointer
 
+          &:hover
+            background-color: darken($pri, 5%)
+
     .image-sec
       position: relative
 
@@ -597,7 +621,7 @@ header
         gap: 1rem
 
         button
-          height: 3.4rem
+          height: 3rem
           cursor: pointer
 
           img
@@ -610,3 +634,72 @@ header
       img
         @include image()
         border-radius: 1.5rem
+
+/////////     footer     /////////
+footer
+  background-color: #363636
+
+  .footer-item
+    @include grid($columns: 1fr 1fr 1fr)
+    padding: 3rem 0
+
+    .item
+      .footer-title
+        font-size: 1.2rem
+        font-weight: 500
+        margin-bottom: 1rem
+        color: $light
+
+      .other-links
+        li
+          margin-bottom: .4rem
+
+        button
+          font-size: .9rem
+          color: $light
+
+  .other-item
+    @include flex($justify: space-between)
+    border: .1rem solid darken($light, 65%)
+    border-left: none
+    border-right: none
+    padding: .7rem 0
+    margin: 1rem 0
+    margin-top: 0
+
+    h3
+      font-size: .9rem
+      font-weight: 400
+      color: $light
+
+    .follow-us
+      @include flex($justify: flex-start)
+      gap: 1rem
+
+      .social-links
+        @include flex($justify: flex-start)
+
+        button
+          padding: .5rem
+          color: $light
+          cursor: pointer
+
+    .download-app-btn
+      @include flex($justify: flex-end)
+      gap: 1rem
+
+      h3
+        margin-right: .5rem
+
+      .download-btn
+        height: 2rem
+
+        img
+          @include image()
+
+  .copyright
+    font-size: .9rem
+    font-weight: 400
+    color: $light
+    text-align: center
+    padding: .5rem 0 1.5rem

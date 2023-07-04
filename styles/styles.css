@@ -43,12 +43,16 @@ section.bg-image-section {
   color: #3BC35A;
   text-transform: uppercase;
   font-weight: 500;
-  font-size: 0.8rem;
+  font-size: 1rem;
   border-radius: 0.2rem;
   cursor: pointer;
 }
+.section-title.with-btn .pageBtn:hover {
+  background-color: #3BC35A;
+  color: #ffffff;
+}
 .section-title h2 {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 500;
   margin-bottom: 0.6rem;
 }
@@ -112,6 +116,10 @@ header .header-inner nav .register button {
   font-weight: 500;
   border-radius: 0.2rem;
   cursor: pointer;
+}
+header .header-inner nav .register button:hover {
+  background-color: #000000;
+  color: #ffffff;
 }
 
 .banner-section {
@@ -190,6 +198,14 @@ header .header-inner nav .register button {
   background: none;
   color: #3BC35A;
 }
+.banner-section .banner-area .content-sec .button-group button:nth-last-child(1):hover {
+  color: #2f9c48;
+  border-color: #2f9c48;
+  background: none;
+}
+.banner-section .banner-area .content-sec .button-group button:hover {
+  background-color: #35af51;
+}
 .banner-section .banner-area .image-sec {
   height: 25rem;
 }
@@ -223,7 +239,7 @@ header .header-inner nav .register button {
   top: 40%;
   transform: translateY(-50%);
   padding: 0.7rem;
-  max-width: 15rem;
+  max-width: 15.4rem;
   width: 100%;
   background-color: #ffffff;
   border-radius: 0.5rem;
@@ -231,9 +247,9 @@ header .header-inner nav .register button {
   box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.05);
 }
 .banner-section .banner-area .image-sec .big-image .content-area h4 {
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
 }
 .banner-section .banner-area .image-sec .big-image .content-area .others {
   display: flex;
@@ -243,8 +259,11 @@ header .header-inner nav .register button {
   gap: 1rem;
 }
 .banner-section .banner-area .image-sec .big-image .content-area .others li {
-  font-size: 0.77rem;
+  font-size: 0.7rem;
   color: #666666;
+}
+.banner-section .banner-area .image-sec .big-image .content-area .others li i {
+  margin-right: 0.2rem;
 }
 .banner-section .banner-area .image-sec .small-image {
   position: absolute;
@@ -293,13 +312,12 @@ header .header-inner nav .register button {
   justify-content: flex-start;
   align-items: center;
   gap: 0.5rem;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.2rem;
 }
 .banner-section .banner-area .image-sec .rating-area .rating h3 {
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 0;
-  font-size: 1.5rem;
-  line-height: 1rem;
+  font-size: 1.6rem;
 }
 .banner-section .banner-area .image-sec .rating-area .rating img {
   height: 1.2rem;
@@ -373,6 +391,10 @@ header .header-inner nav .register button {
   color: #666666;
 }
 
+.how-it-works {
+  max-width: 1850px;
+  margin: 0 auto;
+}
 .how-it-works .swiper-button-next, .how-it-works .swiper-button-prev {
   height: 2.5rem;
   width: 2.5rem;
@@ -526,6 +548,9 @@ header .header-inner nav .register button {
   border: 1px solid #3BC35A;
   cursor: pointer;
 }
+.earn-money .inner-content .content-sec .button-group button:hover {
+  background-color: #35af51;
+}
 .earn-money .inner-content .image-sec {
   position: relative;
 }
@@ -656,7 +681,7 @@ header .header-inner nav .register button {
   gap: 1rem;
 }
 .download-app .inner-content .content-sec .button-group button {
-  height: 3.4rem;
+  height: 3rem;
   cursor: pointer;
 }
 .download-app .inner-content .content-sec .button-group button img {
@@ -675,4 +700,84 @@ header .header-inner nav .register button {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 1.5rem;
+}
+
+footer {
+  background-color: #363636;
+}
+footer .footer-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+  padding: 3rem 0;
+}
+footer .footer-item .item .footer-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+footer .footer-item .item .other-links li {
+  margin-bottom: 0.4rem;
+}
+footer .footer-item .item .other-links button {
+  font-size: 0.9rem;
+  color: #ffffff;
+}
+footer .other-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 0.1rem solid #595959;
+  border-left: none;
+  border-right: none;
+  padding: 0.7rem 0;
+  margin: 1rem 0;
+  margin-top: 0;
+}
+footer .other-item h3 {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #ffffff;
+}
+footer .other-item .follow-us {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+footer .other-item .follow-us .social-links {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+footer .other-item .follow-us .social-links button {
+  padding: 0.5rem;
+  color: #ffffff;
+  cursor: pointer;
+}
+footer .other-item .download-app-btn {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+}
+footer .other-item .download-app-btn h3 {
+  margin-right: 0.5rem;
+}
+footer .other-item .download-app-btn .download-btn {
+  height: 2rem;
+}
+footer .other-item .download-app-btn .download-btn img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+footer .copyright {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #ffffff;
+  text-align: center;
+  padding: 0.5rem 0 1.5rem;
 }/*# sourceMappingURL=styles.css.map */
